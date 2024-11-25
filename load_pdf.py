@@ -16,6 +16,6 @@ def split_documents(document):
     )
     return text_splitter.split_documents(document)
 
-documents = load_documents("data/maintaining-open-source-projects.pdf")
-chunks = split_documents(documents)
-print(chunks[100])
+# documents = load_documents("data/maintaining-open-source-projects.pdf")
+# chunks = split_documents(documents)
+# print(chunks[100])
