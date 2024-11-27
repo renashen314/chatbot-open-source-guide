@@ -9,17 +9,23 @@ Actual Response: {actual_response}
 """
 
 
-def test_monopoly_rules():
+def test_good_commit_messages():
     assert query_and_validate(
-        question="How much total money does a player start with in Monopoly? (Answer with the number only)",
-        expected_response="$1500",
+        question="What should a good commit message include?",
+        expected_response="""
+        Why is this change necessary? How does it address the issue? What effects does the patch have?
+        """,
     )
 
 
-def test_ticket_to_ride_rules():
+def code_review_rules():
     assert query_and_validate(
-        question="How many points does the longest continuous train get in Ticket to Ride? (Answer with the number only)",
-        expected_response="10 points",
+        question="What types of feedback can I provide during code review?",
+        expected_response="""
+        High level: about software design, design patterns, anti-patterns, architec-ture, suggestion of alternative implementations. 
+        Low level: details like matching coding style with the surroundings of the
+        file or project, indentation, naming conventions
+        """,
     )
 
 
