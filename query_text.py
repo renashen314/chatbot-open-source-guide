@@ -1,7 +1,7 @@
 from ollama_text_embedding import get_embedding_function 
-from langchain_community.llms.ollama import Ollama
+from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import ChatPromptTemplate
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 import argparse
 
 PROMPT_TEMPLATE = """
@@ -23,7 +23,7 @@ def query_rag(query_text: str):
         persist_directory=CHROMA_PATH,
         embedding_function=embedding_function
     )
-    model = Ollama(model="llama3.2:1b")
+    model = OllamaLLM(model="llama3.2:1b")
 
      # Search the DB.
     results = db.similarity_search_with_score(query_text, k=5)
